@@ -1,11 +1,15 @@
 import random
 
+#Deals cards from the deck
 def deal_Cards():
-    """This method is returns a card from the deck"""
+    """This function is returns a card from the deck"""
     cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
     card = random.choice(cards)
     return card
+
+#Compares the users cards
 def compare(users_score, computer_score):
+    """This function evaluates the winner"""
     if users_score == computer_score:
         return "Draw"
     elif computer_score == 0:
@@ -21,7 +25,9 @@ def compare(users_score, computer_score):
     else:
         return "You lose"
 
+#Calculates the sum of a given hand
 def Calculate_Cards(cards):
+    """This calculates the sum of the cards"""
     if sum(cards) == 21 and len(cards) == 2:
         return 0
 
@@ -31,16 +37,20 @@ def Calculate_Cards(cards):
 
     return sum(cards)
 
+#intinalize the decks
 user_cards = []
 computer_cards = []
+
+#switch for a while loop
 is_game_over = False
+
+#Deals out the cards for the two players
 for _ in range(2):
     user_cards.append(deal_Cards())
     computer_cards.append(deal_Cards())
 
+#while loop to check and ask the user for more cards
 while not is_game_over:
-
-
     user_Score = Calculate_Cards(user_cards)
     computer_score = Calculate_Cards(computer_cards)
 
