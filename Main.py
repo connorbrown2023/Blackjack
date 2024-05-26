@@ -57,8 +57,7 @@ while not is_game_over:
     print(f" Your cards: {user_cards} Your score: {user_Score}")
     print(f" computer first card: {computer_cards[0]}")
 
-
-
+    #check for a winner
     if user_Score == 0 or computer_score == 0 or user_Score > 21:
         is_game_over = True
     else:
